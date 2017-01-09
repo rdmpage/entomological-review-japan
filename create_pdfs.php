@@ -88,11 +88,11 @@ function pdf_add_xmp ($reference, $pdf_filename)
 
 
 $start = array(
-	1 => array (1 => 1, 2=> 21),
+	//1 => array (1 => 1, 2=> 21),
 
 
 
-	//5 => array (1 => 1, 2=> 201),
+	'05' => array (1 => -2, 2=> 65)
 
 	//44 => array (1 => 1, 2=> 63), plates complicate things
 	//45 => array (1 => 1, 2=> 81),
@@ -150,7 +150,7 @@ function import($reference)
 			}
 			else
 			{		
-				$from = $reference->spage - $start[$reference->volume][$reference->issue] + 1;
+				$from = $reference->spage - $start[$reference->volume][$reference->issue];
 				if (isset($reference->epage))
 				{
 					$to = $from + ($reference->epage - $reference->spage);
